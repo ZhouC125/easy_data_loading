@@ -31,11 +31,11 @@ extension EmptyStatusExtension on EmptyStatus {
   String get icon {
     switch (this) {
       case EmptyStatus.noRecord:
-        return 'assets/image/loading/no_record@2x.png';
+        return 'assets/no_record@2x.png';
       case EmptyStatus.noData:
-        return 'assets/image/loading/no_data.png';
+        return 'assets/no_data.png';
       case EmptyStatus.noCertificate:
-        return 'assets/image/loading/no_certificate@2x.png';
+        return 'assets/no_certificate@2x.png';
     }
   }
 }

@@ -8,7 +8,7 @@ class LoadingWidget {
   static Widget buildNetworkBlockedView(
       BuildContext context, String desc, Function? function) {
     return buildGeneralTapView(
-      url: "assets/image/loading/network_error@2x.png",
+      url: "assets/network_error@2x.png",
       desc: desc,
       onTap: function,
       context: context,
@@ -19,7 +19,7 @@ class LoadingWidget {
   static Widget buildErrorView(BuildContext context, String errorDesc,
       List<String> errorStack, Function? function) {
     return buildGeneralTapView(
-      url: "assets/image/loading/loading_error@2x.png",
+      url: "assets/loading_error@2x.png",
       desc: errorDesc,
       onTap: function,
       errorStack: errorStack,
@@ -61,6 +61,7 @@ class LoadingWidget {
               children: [
                 Image.asset(
                   url,
+                  package: 'easy_data_loading',
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
