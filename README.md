@@ -1,18 +1,58 @@
-# easy_data_loading
+# 添加依赖
+1、在`pubspec.yaml`中加入：
 
-A new Flutter plugin project.
+```
+dependencies:
+  flutter_upgrade: # 版本升级
+    git:
+      url: https://github.com/ZhouC125/easy_data_loading.git
+```
 
-## Getting Started
+2、执行flutter命令获取包：
+```
+flutter pub get`
+```
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+3、引入
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+import 'package:easy_data_loading/easy_data_loading.dart';
 
-The plugin project was generated without specifying the `--platforms` flag, no platforms are currently supported.
-To add platforms, run `flutter create -t plugin --platforms <platforms> .` in this directory.
-You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
+```
+
+# 使用
+
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('EasyDataLoading'),
+    ),
+    body:LoadingView(
+      dataLoad: (LoadingViewController controller) async{
+        await Future.delayed(const Duration(seconds: 2));
+        return Future.value({'name':'1'});
+      },
+      builder: (data,_) {
+        return Text(data['name']??'name');
+      },
+    ),
+  );
+}
+```
+
+`LoadingView` 的成员说明：
+| 参数名                           | 类型                          | 描述                                                 | 默认值                                        |
+|-------------------------------|-----------------------------|----------------------------------------------------|--------------------------------------------|
+| builder               | `Widget Function(T data, LoadingViewController controller)`                      | 需要加载的Widget                                          | 必填                       |
+| dataLoad               | `Future<T?> Function(LoadingViewController controller)`                      | 数据加载                                          | 必填                       |
+| controller               | `LoadingViewController`                      | 数据加载的控制器                                          | null                                   |
+| todoAfterError               | `Future<T?> Function(LoadingViewController controller)`                      | 接口错误加载重试                                          | null                       |
+| todoAfterNetworkBlocked               | `Future<T?> Function(LoadingViewController controller)`                      | 网络错误加载重试                                          | null                      |
+| networkBlockedDesc               | `String`                      | 网络错误提示文案                                          | 网络连接超时，请检查你的网络环境                      |
+| errorDesc               | `String`                      | 接口错误提示文案                                          | 加载失败                      |
+| emptyStatus               | `EmptyStatus`                      | 暂无数据                                          | EmptyStatus.noData                      |
+| maxHeight               | `double`                      |  最大高度                                         | null                      |
+| isKeepAlive               | `bool`                      |  是否保持状态                                         | false                      |
