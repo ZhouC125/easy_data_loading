@@ -3,7 +3,7 @@
 
 ```
 dependencies:
-  flutter_upgrade: # 版本升级
+  flutter_upgrade:
     git:
       url: https://github.com/ZhouC125/easy_data_loading.git
 ```
