@@ -150,9 +150,9 @@ class _LoadingViewState<T> extends State<LoadingView<T>>
       case LoadingStatus.idle:
       case LoadingStatus.loading:
         return _buildLoadingView();
-      case LoadingStatus.loading_suc:
+      case LoadingStatus.loadingSuc:
         return widget.builder.call(data as T, _controller);
-      case LoadingStatus.loading_suc_but_empty:
+      case LoadingStatus.loadingSucButEmpty:
         return LoadingWidget.buildLoadingSucButEmptyView(
             context, widget.emptyStatus);
       case LoadingStatus.error:
@@ -161,7 +161,7 @@ class _LoadingViewState<T> extends State<LoadingView<T>>
           initDataLoad();
           widget.todoAfterError?.call(_controller);
         });
-      case LoadingStatus.network_blocked:
+      case LoadingStatus.networkBlocked:
         return LoadingWidget.buildNetworkBlockedView(
             context, widget.networkBlockedDesc, () {
           initDataLoad();

@@ -10,13 +10,13 @@ class LoadingViewController extends ChangeNotifier {
   UpdateDataLoad? updateDataLoad;
   ///完成
   void finish() {
-    status = LoadingStatus.loading_suc;
+    status = LoadingStatus.loadingSuc;
     notifyListeners();
   }
 
   /// 无数据
   void emptyData() {
-    status = LoadingStatus.loading_suc_but_empty;
+    status = LoadingStatus.loadingSucButEmpty;
     notifyListeners();
   }
 
@@ -28,7 +28,7 @@ class LoadingViewController extends ChangeNotifier {
 
   ///网络错误
   void networkBlocked() {
-    status = LoadingStatus.network_blocked;
+    status = LoadingStatus.networkBlocked;
     notifyListeners();
   }
 

@@ -4,9 +4,9 @@
 enum LoadingStatus {
   idle, // 初始化
   loading, // 加载中
-  loading_suc, // 加载成功
-  loading_suc_but_empty, // 加载成功但是数据为空
-  network_blocked, // 网络加载错误
+  loadingSuc, // 加载成功
+  loadingSucButEmpty, // 加载成功但是数据为空
+  networkBlocked, // 网络加载错误
   error, // 加载错误
 }
 ///空数据状态
