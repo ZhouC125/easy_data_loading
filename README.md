@@ -3,14 +3,12 @@
 
 ```
 dependencies:
-  easy_data_loading:
-    git:
-      url: https://github.com/ZhouC125/easy_data_loading.git
+  easy_data_loading:0.1.0
 ```
 
 2、执行flutter命令获取包：
 ```
-flutter pub get`
+flutter pub get
 ```
 
 3、引入

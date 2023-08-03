@@ -1,6 +1,8 @@
 name: easy_data_loading
 description: 这是一个简单的数据加载库，可以用于加载网络数据，本地数据，以及数据库数据
-version: 0.0.1
+version: 0.1.0
+repository: https://github.com/ZhouC125/easy_data_loading
+homepage: https://github.com/ZhouC125/easy_data_loading
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -9,7 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -31,16 +32,6 @@ flutter:
   # This is required for using `dart:ffi`.
   # All these are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
-  plugin:
-    platforms:
-    # This plugin project was generated without specifying any
-    # platforms with the `--platform` argument. If you see the `some_platform` map below, remove it and
-    # then add platforms following the instruction here:
-    # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
-    # -------------------
-      some_platform:
-        pluginClass: somePluginClass
-    # -------------------
 
   # To add assets to your plugin package, add an assets section, like this:
   assets:
